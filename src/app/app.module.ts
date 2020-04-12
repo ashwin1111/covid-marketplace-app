@@ -26,6 +26,7 @@ import { VerifiedComponent } from './components/verified/verified.component';
 import { DisplayShortUrl } from './components/modal/display-short-url.component';
 import { Alert } from './components/modal/alert.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { Alert } from './components/modal/alert.component';
     ShortUrlComponent,
     DisplayShortUrl,
     Alert,
-    VerifiedComponent
+    VerifiedComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'short-url', component: ShortUrlComponent },
-  { path: 'verified', component: VerifiedComponent }
+  { path: 'verified', component: VerifiedComponent },
+
 ];
 
 @NgModule({

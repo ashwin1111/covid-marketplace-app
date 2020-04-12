@@ -1,5 +1,7 @@
-<div class="login-wrapper " fxLayout="row" fxLayoutAlign="center center">
-  <mat-card class="box">
+<div class="login-wrapper  " fxLayout="row" fxLayoutAlign="center center"
+  style="font-family: 'Montserrat', sans-serif;">
+  <mat-card class="box p-5"
+    style="border: rgb(172, 164, 164) 2px solid;border-radius: 30px;box-shadow: 5px 10px #888888;margin-top: 9rem;width: 95%;">
     <mat-card-header>
       <mat-card-title><br>Sign up<br></mat-card-title>
     </mat-card-header>
@@ -17,11 +19,11 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Phone Name" name="phnno" [(ngModel)]="phnno" required>
+          <input matInput placeholder="Phone (+91)" name="phnno" [(ngModel)]="phnno" required>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Aadhar Number" name="aadhar" [(ngModel)]="aadhar" required>
+          <input matInput placeholder="Aadhar (1234 1234 1234 1234)" name="aadhar" [(ngModel)]="aadhar" required>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -49,3 +51,4 @@
     </form>
   </mat-card>
 </div>
+<br><br>
