@@ -25,6 +25,8 @@ import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { VerifiedComponent } from './components/verified/verified.component';
 import { DisplayShortUrl } from './components/modal/display-short-url.component';
 import { Alert } from './components/modal/alert.component';
+import { ScannerComponent } from './components/scanner/scanner.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { Alert } from './components/modal/alert.component';
     ShortUrlComponent,
     DisplayShortUrl,
     Alert,
-    VerifiedComponent
+    VerifiedComponent,
+    ScannerComponent
+
   ],
   imports: [
     BrowserModule,
