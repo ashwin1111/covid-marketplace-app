@@ -1,7 +1,7 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<div class="login-wrapper " fxLayout="row" fxLayoutAlign="center center">
   <mat-card class="box">
     <mat-card-header>
-      <mat-card-title>Signup</mat-card-title>
+      <mat-card-title><br>Sign up<br></mat-card-title>
     </mat-card-header>
 
     <form class="example-form">
@@ -12,7 +12,8 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" name="email" [(ngModel)]="email" required>
+          <input matInput placeholder="Email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" name="email"
+            [(ngModel)]="email" required>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -28,22 +29,23 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Re type Password" type="password" name="password2" [(ngModel)]="password2" required>
+          <input matInput placeholder="Re type Password" type="password" name="password2" [(ngModel)]="password2"
+            required>
         </mat-form-field>
 
       </mat-card-content>
 
-      <button mat-stroked-button color="accent" class="btn-block" (click)="signup()">Ready to Rock</button>
+      <button mat-stroked-button color="accent" class="btn-block" (click)="signup()">Register</button>
       <br><br>
       <p routerLink="/login" routerLinkActive="active" style="
-      text-align: right;
+      text-align: center;
       font-size: 16px;
       padding-top: 10px;
       color: #3f3dca;
       cursor: pointer;
       margin: 0;">
-      Have an account already? Login</p>
-
+        Have an account already? Login</p>
+      <br><br>
     </form>
   </mat-card>
 </div>
