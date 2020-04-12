@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShortUrlComponent } from './short-url.component';
+import { BookMarketplaceComponent } from './book-marketplace.component';
 
-describe('ShortUrlComponent', () => {
-  let component: ShortUrlComponent;
-  let fixture: ComponentFixture<ShortUrlComponent>;
+describe('BookMarketplaceComponent', () => {
+  let component: BookMarketplaceComponent;
+  let fixture: ComponentFixture<BookMarketplaceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShortUrlComponent ]
+      declarations: [ BookMarketplaceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShortUrlComponent);
+    fixture = TestBed.createComponent(BookMarketplaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
