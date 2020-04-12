@@ -19,7 +19,7 @@
       <br><br>
       <mat-form-field *ngIf="urlOption === 'custom'" class="example-full-width">
         <input matInput placeholder="example - ppt" name="customShortUrl" [(ngModel)]="customShortUrl"
-        (ngModelChange)="this.customShortUrlUpdate.next($event)" required>
+          (ngModelChange)="this.customShortUrlUpdate.next($event)" required>
       </mat-form-field>
       <p *ngIf="urlOption === 'custom' && customShortUrl?.length > 0 && isAvailable === true"
         style="background-color: #47e073;">
