@@ -60,17 +60,17 @@ export class LogInComponent implements OnInit {
             bigHeading: 'Login failed :('
           }
           this.openDialog(data);
-        } else if (Object(res).error.msg === 'No user found with the given email / password') {
+        } else if (Object(res).error.msg === 'No user found with the given creds') {
           var data = {
-            text: 'No user found with the given email / password',
+            text: 'No user found with the given creds',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Login failed :('
           }
           this.openDialog(data);
-        } else if (Object(res).error.msg === 'Email / Password is wrong') {
+        } else if (Object(res).error.msg === 'Invalid creds') {
           var data = {
-            text: 'Email / Password is wrong',
+            text: 'Invalid creds',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Login failed :('

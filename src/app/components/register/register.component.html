@@ -16,7 +16,19 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
+          <input matInput placeholder="Phone Name" name="phnno" [(ngModel)]="phnno" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Aadhar Number" name="aadhar" [(ngModel)]="aadhar" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
           <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Re type Password" type="password" name="password2" [(ngModel)]="password2" required>
         </mat-form-field>
 
       </mat-card-content>

@@ -22,6 +22,9 @@ export class RegisterComponent implements OnInit {
   name: any;
   email: any;
   password: any;
+  password2: any;
+  phnno: any;
+  aadhar: any;
 
   openDialog(values): void {
     const dialogRef = this.dialog.open(Alert, {
@@ -42,11 +45,14 @@ export class RegisterComponent implements OnInit {
 
   signup() {
     this.spinner.show();
+    // Add check for pwd and re type pwd
     if ((this.name !== '' && this.name !== undefined) && (this.email !== '' && this.email !== undefined) && (this.password !== '' && this.password !== undefined)) {
       var data = {
         name: this.name,
         email: this.email,
-        password: this.password
+        password: this.password,
+        aadhar: this.aadhar,
+        phno: this.phnno
       };
 
       var baseUrl = this.apiService.getBaseUrl();
@@ -55,7 +61,10 @@ export class RegisterComponent implements OnInit {
         this.name = null;
         this.email = null;
         this.password = null;
-        if (Object(res).auth === true && Object(res).msg === 'User registered successfully') {
+        this.password2 = null;
+        this.aadhar = null;
+        this.phnno = null;
+        if (Object(res).msg === 'User registered successfully') {
           var data = {
             text: 'Check your email to verify your account',
             button: 'Close',
@@ -64,7 +73,7 @@ export class RegisterComponent implements OnInit {
           }
           this.openDialog(data);
           this.router.navigate(['/login']);
-        } else if (Object(res).error.msg === 'Email already exists') {
+        } else if (Object(res).msg === 'Email already exists') {
           var data = {
             text: 'Email already exists',
             button: 'Close',
@@ -72,7 +81,7 @@ export class RegisterComponent implements OnInit {
             bigHeading: 'Registration failed :('
           }
           this.openDialog(data);
-        } else if (Object(res).error.msg === 'Email badly formatted') {
+        } else if (Object(res).error && Object(res).error.msg === 'Email badly formatted') {
           var data = {
             text: 'Email badly formatted',
             button: 'Close',
