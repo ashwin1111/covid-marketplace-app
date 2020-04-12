@@ -24,7 +24,6 @@ import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { VerifiedComponent } from './components/verified/verified.component';
 import { Alert } from './components/modal/alert.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -46,9 +45,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     FormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    NgxSpinnerModule,
-    OwlDateTimeModule, 
-    OwlNativeDateTimeModule
+    NgxSpinnerModule
   ],
   providers: [NgxSpinnerModule, NgxSpinnerService],
   bootstrap: [AppComponent],
