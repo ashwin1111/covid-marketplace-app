@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  background-image: url(./bg-img.png);
+  /* background-image: url(./bg-img.png);*/
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@ body {
   float: left;
   padding: 60px 50px 40px 50px;
   width: 100%;
-  height: 100%;
+
   background: #fff;
   border-radius: 10px;
   transform: scale(1);
@@ -53,19 +53,21 @@ body {
 }
 
 .box {
-  position: relative;
-  top: 0;
+  position: absolute;
+  align-items: center;
+
   opacity: 1;
   float: left;
   padding: 60px 50px 40px 50px;
-  width: 100%;
+
+
   background: #fff;
   border-radius: 10px;
   transform: scale(1);
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   z-index: 5;
-  max-width: 330px;
+  max-width: 400px;
 }
 
 .box2 {
@@ -82,7 +84,7 @@ body {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   z-index: 5;
-  max-width: 330px;
+  max-width: 400px;
 }
 
 .box.back {
@@ -96,7 +98,7 @@ body {
 
 .box:before {
   content: "";
-  width: 100%;
+  width: 0%;
   height: 30px;
   border-radius: 10px;
   position: absolute;
@@ -146,7 +148,7 @@ body {
   padding: 0.8375em 0;
 }
 
-.mat-radio-button ~ .mat-radio-button {
+.mat-radio-button~.mat-radio-button {
   margin-left: 16px;
 }
 

@@ -24,6 +24,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { VerifiedComponent } from './components/verified/verified.component';
 import { Alert } from './components/modal/alert.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
+import { ScannerComponent } from './components/scanner/scanner.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { BookMarketplaceComponent } from './components/book-marketplace/book-mar
     LogInComponent,
     Alert,
     VerifiedComponent,
-    BookMarketplaceComponent
+    BookMarketplaceComponent,
+    ScannerComponent
+
   ],
   imports: [
     BrowserModule,
