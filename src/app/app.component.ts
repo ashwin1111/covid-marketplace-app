@@ -15,7 +15,7 @@ export class AppComponent {
   ) { }
 
   logout() {
-    localStorage.removeItem('x-access-token');
+    localStorage.clear();
     this.router.navigate(['/login']);
     this.loggedIn = false;
   }

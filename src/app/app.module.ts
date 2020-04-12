@@ -20,13 +20,11 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ShortUrlComponent } from './components/short-url/short-url.component';
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { VerifiedComponent } from './components/verified/verified.component';
-import { DisplayShortUrl } from './components/modal/display-short-url.component';
 import { Alert } from './components/modal/alert.component';
+import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
 import { ScannerComponent } from './components/scanner/scanner.component';
-
 
 @NgModule({
   declarations: [
@@ -35,10 +33,9 @@ import { ScannerComponent } from './components/scanner/scanner.component';
     RegisterComponent,
     RegisterComponent,
     LogInComponent,
-    ShortUrlComponent,
-    DisplayShortUrl,
     Alert,
     VerifiedComponent,
+    BookMarketplaceComponent,
     ScannerComponent
 
   ],
@@ -57,7 +54,7 @@ import { ScannerComponent } from './components/scanner/scanner.component';
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [
-    DisplayShortUrl, Alert
+    Alert
   ]
 })
 

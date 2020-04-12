@@ -51,7 +51,8 @@ export class LogInComponent implements OnInit {
       this.apiService.apiCall(baseUrl + '/auth/login', data).then(res => {
         if (Object(res).auth === true && Object(res).msg === 'Login success :)') {
           localStorage.setItem('x-access-token', Object(res).token);
-          this.router.navigate(['/short-url']);
+          localStorage.setItem('user', JSON.stringify(Object(res).data));
+          this.router.navigate(['/book-marketplace']);
         } else if (Object(res).error.msg === 'Account not verified') {
           var data = {
             text: 'Account not verified, please check your email for confirmation email',
@@ -96,7 +97,7 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
     this.spinner.show();
     if (localStorage.getItem('x-access-token') !== null) {
-      this.router.navigate(['/short-url']);
+      this.router.navigate(['/book-marketplace']);
     }
     this.spinner.hide();
   }
