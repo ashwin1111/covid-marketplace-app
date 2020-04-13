@@ -27,15 +27,13 @@ export class BookMarketplaceComponent implements OnInit {
       distinctUntilChanged())
       .subscribe(value => {
         var obj = this.marketPlacesCollection.filter(f => f.market_place_id === value);
-        obj = obj[0];
-        var timeSlotIds = obj.time_slot.ids.split(',');
-        var timeSlotRanges = obj.time_slot.time_slot_ranges.split(',');
-        for (let i in timeSlotRanges) {
+        obj = obj[0].time_slot_data;
+        obj.forEach(element => {
           this.timeslotCollection.push({
-            timeSlotIds: timeSlotIds[i],
-            timeSlotRanges: timeSlotRanges[i]
-          })
-        }
+            timeSlotIds: element.id,
+            timeSlotRanges: element.time_slot_range
+          });
+        });
       });
   }
 
