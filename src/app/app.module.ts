@@ -26,6 +26,7 @@ import { Alert } from './components/modal/alert.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
 import { OtpComponent } from './components/otp/otp.component';
 import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
+import { DisplayBookingComponent } from './components/display-booking/display-booking.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ResendOtpComponent } from './components/resend-otp/resend-otp.component
     VerifiedComponent,
     BookMarketplaceComponent,
     OtpComponent,
-    ResendOtpComponent
+    ResendOtpComponent,
+    DisplayBookingComponent
   ],
   imports: [
     BrowserModule,

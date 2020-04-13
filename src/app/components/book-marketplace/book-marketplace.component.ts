@@ -51,33 +51,46 @@ export class BookMarketplaceComponent implements OnInit {
   endTime: any;
   marketPlacesCollection: any;
   select2: any;
+  filename: any;
+  code = '8923';
+  displayQr = false;
 
   openDialog(values): void {
+    var data = {
+      text: values.text,
+      button: values.button,
+      heading: values.heading,
+      bigHeading: values.bigHeading
+    }
     const dialogRef = this.dialog.open(Alert, {
       width: '400px',
       height: '400px',
-      data: {
-        text: values.text,
-        button: values.button,
-        heading: values.heading,
-        bigHeading: values.bigHeading
-      }
+      data: data
     });
 
     dialogRef.afterClosed().subscribe(() => {
+      if (this.data.text === 'Slot booked successfully') {
+        this.router.navigate(['/display-booking'], {queryParams: {
+          filename: this.filename,
+          code: this.code
+        }});
+      }
     });
   }
 
   validateResult(res) {
     // TODO: handle all cases
     if (Object(res).msg === 'Slot booked successfully') {
-      var data = {
-        text: 'Slot booked successfully',
-        button: 'Close',
-        heading: 'Reason',
-        bigHeading: 'Slot booked!'
-      }
-      this.openDialog(data);
+      this.filename = 'https://testtest.s3.us-east-2.amazonaws.com/' + Object(res).file;
+      // this.code = Object(res).code;
+      // var data = {
+      //   text: 'Slot booked successfully',
+      //   button: 'Close',
+      //   heading: 'Reason',
+      //   bigHeading: 'Slot booked!'
+      // }
+      // this.openDialog(data);
+      this.displayQr = true;
     } else if (Object(res).msg === 'Sorry you Already booked this slot for today :)') {
       var data = {
         text: 'Sorry you Already booked this slot for today',
@@ -99,9 +112,22 @@ export class BookMarketplaceComponent implements OnInit {
 
   createUrl() {
     var baseUrl = this.apiService.getBaseUrl();
+    var time_slot;
+    this.marketPlacesCollection.filter(f => {
+      if (f.market_place_id === this.select) {
+        f.time_slot_data.filter(f2 => {
+          if (f2.id === this.select2) {
+            time_slot = f2.time_slot_range;
+          }
+        })
+      }
+    });
+
     let data = {
       market_place_id: this.select,
-      time_slot_id: this.select2
+      time_slot_id: this.select2,
+      aadhar: this.aadhar,
+      time_slot: time_slot
     };
 
     this.apiService.apiCall(baseUrl + '/user/book_slot', data).then(res => {

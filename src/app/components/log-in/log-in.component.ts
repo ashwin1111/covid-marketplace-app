@@ -56,7 +56,7 @@ export class LogInComponent implements OnInit {
           this.router.navigate(['/book-marketplace']);
         } else if (Object(res).error.msg === 'Account not verified') {
           var data = {
-            text: 'Email verification pending',
+            text: 'OTP verification pending',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Login failed :('
