@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 import { ApiService } from '../../api.service';
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -28,9 +28,9 @@ export class RegisterComponent implements OnInit {
 
   openDialog(values): void {
     const dialogRef = this.dialog.open(Alert, {
-      width: '400px',
-      height: '400px',
-      data: { 
+      width: '70%',
+      height: '50%',
+      data: {
         text: values.text,
         button: values.button,
         heading: values.heading,
@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
         this.phnno = null;
         if (Object(res).msg === 'User registered successfully') {
           var data = {
-            text: 'Check your email to verify your account',
+            text: 'Kindly verify your email ID',
             button: 'Close',
             heading: 'TODO',
             bigHeading: 'Registered successfully :)'
@@ -91,7 +91,7 @@ export class RegisterComponent implements OnInit {
           this.openDialog(data);
         } else {
           var data = {
-            text: 'There was a problem while registering the user',
+            text: 'Problem while registering',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Registration failed :('

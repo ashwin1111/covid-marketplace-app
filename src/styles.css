@@ -70,12 +70,17 @@ body {
   max-width: 400px;
 }
 
+my-dialog {
+  font-size: larger !important;
+}
+
+
 .box2 {
   position: relative;
   top: 0;
   opacity: 1;
   float: left;
-  padding: 60px 50px 40px 50px;
+  /*padding: 60px 50px 40px 50px;*/
   /* padding: 10px 0px 0px 10px; */
   width: 100%;
   background: #fff;
@@ -85,7 +90,10 @@ body {
   -ms-transform: scale(1);
   z-index: 5;
   max-width: 400px;
+  overflow: visible !important;
 }
+
+
 
 .box.back {
   transform: scale(.95);
@@ -154,4 +162,11 @@ body {
 
 .demo-section {
   border: 1px solid #bbb;
+}
+
+
+
+.cdk-overlay-1 {
+  height: 60% !important;
+
 }
