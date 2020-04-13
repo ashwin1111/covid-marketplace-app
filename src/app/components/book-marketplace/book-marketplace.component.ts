@@ -119,7 +119,7 @@ export class BookMarketplaceComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.show();
     this.isLoggedIn = this.myapp.refreshAppComponent();
-    if (false) {
+    if (this.isLoggedIn === false) {
       this.router.navigate(['/login']);
     } else {
       this.apiService.getApiCall(this.apiService.getBaseUrl() + '/user/MarketPlaces').then(res => {
