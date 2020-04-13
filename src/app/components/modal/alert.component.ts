@@ -31,6 +31,8 @@ export class Alert implements OnInit {
             this.router.navigate(['/login']);
         } else if (this.data.text === 'Sorry to inform you that your OTP has expired, you can generate a new otp by clicking Re-send otp below') {
             this.router.navigate(['/resend-otp']);
+        } else if (this.data.text === 'Slot booked successfully') {
+            this.router.navigate(['/display-otp']);
         }
         this.dialogRef.close();
     }

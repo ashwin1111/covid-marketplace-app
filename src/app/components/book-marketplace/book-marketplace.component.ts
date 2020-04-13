@@ -70,20 +70,28 @@ export class BookMarketplaceComponent implements OnInit {
 
   validateResult(res) {
     // TODO: handle all cases
-    if (Object(res).error.msg === 'Internal error') {
+    if (Object(res).msg === 'Slot booked successfully') {
       var data = {
-        text: 'There was an error in creating short url',
+        text: 'Slot booked successfully',
         button: 'Close',
         heading: 'Reason',
-        bigHeading: 'Creating Short Url failed :('
+        bigHeading: 'Slot booked!'
       }
       this.openDialog(data);
-    } else if (Object(res).error.msg === 'Not a valid URL') {
+    } else if (Object(res).msg === 'Sorry you Already booked this slot for today :)') {
       var data = {
-        text: 'Please enter a valid URL',
+        text: 'Sorry you Already booked this slot for today',
         button: 'Close',
         heading: 'Reason',
-        bigHeading: 'Creating Short Url failed :('
+        bigHeading: 'Booking failed :('
+      }
+      this.openDialog(data);
+    } else {
+      var data = {
+        text: 'Problem while booking your slot',
+        button: 'Close',
+        heading: 'Reason',
+        bigHeading: 'Booking failed :('
       }
       this.openDialog(data);
     }
@@ -93,13 +101,10 @@ export class BookMarketplaceComponent implements OnInit {
     var baseUrl = this.apiService.getBaseUrl();
     let data = {
       market_place_id: this.select,
-      time_slot_id: this.select2,
-      user_name: this.name,
-      aadhar: this.aadhar,
-      phno: this.phno
+      time_slot_id: this.select2
     };
 
-    this.apiService.apiCall(baseUrl + '/url/', data).then(res => {
+    this.apiService.apiCall(baseUrl + '/user/book_slot', data).then(res => {
       this.spinner.hide();
       this.validateResult(res);
     });
