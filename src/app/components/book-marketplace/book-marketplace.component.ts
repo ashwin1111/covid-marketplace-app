@@ -119,7 +119,7 @@ export class BookMarketplaceComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.show();
     this.isLoggedIn = this.myapp.refreshAppComponent();
-    if (this.isLoggedIn === false) {
+    if (false) {
       this.router.navigate(['/login']);
     } else {
       this.apiService.getApiCall(this.apiService.getBaseUrl() + '/user/MarketPlaces').then(res => {
@@ -135,11 +135,11 @@ export class BookMarketplaceComponent implements OnInit {
         // console.log(err);
         this.spinner.hide();
       });
-  
+
       var user = JSON.parse(localStorage.getItem('user'));
       this.name = user.name;
       this.aadhar = user.aadhar;
-      this.phno = user.phno; 
+      this.phno = user.phno;
     }
   }
 

@@ -1,60 +1,61 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="font-family:Montserrat, sans-serif">
 
-    <mat-card class="box">
-      <mat-card-header>
-        <mat-card-title>Book a Marketplace</mat-card-title>
-      </mat-card-header>
+  <mat-card class="box p-5"
+    style="border: rgb(172, 164, 164) 2px solid;border-radius: 30px;box-shadow: 5px 10px #888888;margin-top: 6rem;margin-bottom: 6rem;width: 95%;">
+    <mat-card-header>
+      <mat-card-title>Book a Marketplace</mat-card-title>
+    </mat-card-header>
+    <br>
+
+    <form class="example-form">
+      <mat-card-content>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" name="name" [(ngModel)]="name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput name="aadhar" placeholder="Aadhar (1234 1234 1234 1234)" [(ngModel)]="aadhar">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Phone (+91)" name="phno" [(ngModel)]="phno">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Select Marketplace</mat-label>
+          <mat-select name="select" [(ngModel)]="select" (ngModelChange)="this.timeslotUpdate.next($event)">
+            <mat-option *ngFor="let food of marketPlaces" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Select Time Slot</mat-label>
+          <mat-select name="select2" [(ngModel)]="select2">
+            <mat-option *ngFor="let food of timeslotCollection" [value]="food.timeSlotIds">
+              {{food.timeSlotRanges}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-card-content>
+      <br><br>
+
       <br>
-  
-      <form class="example-form">
-        <mat-card-content>
+      <button *ngIf="isLoggedIn === true" mat-stroked-button color="accent" class="btn-block"
+        (click)="submit();">Submit</button>
+      <br><br>
 
-          <mat-form-field class="example-full-width">
-            <input matInput  name="name" [(ngModel)]="name" readonly>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <input matInput name="aadhar" [(ngModel)]="aadhar" readonly>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <input matInput name="phno" [(ngModel)]="phno" readonly>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Select Marketplace</mat-label>
-            <mat-select name="select" [(ngModel)]="select" (ngModelChange)="this.timeslotUpdate.next($event)">
-              <mat-option *ngFor="let food of marketPlaces" [value]="food.value">
-                {{food.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Select Time Slot</mat-label>
-            <mat-select name="select2" [(ngModel)]="select2">
-              <mat-option *ngFor="let food of timeslotCollection" [value]="food.timeSlotIds">
-                {{food.timeSlotRanges}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
-        </mat-card-content>
-        <br><br>
-
-        <br>
-        <button *ngIf="isLoggedIn === true" mat-stroked-button color="accent" class="btn-block"
-          (click)="submit();">Submit</button>
-        <br><br>
-
-        <p routerLink="/register" routerLinkActive="active" *ngIf="isLoggedIn === false" style="
-          text-align: right;
+      <p routerLink="/register" routerLinkActive="active" *ngIf="isLoggedIn === false" style="
+          text-align: center;
           font-size: 16px;
           padding-top: 10px;
           color: #3f3dca;
           cursor: pointer;
           margin: 0;">
-          Don't have an account? Signup</p>
-      </form>
-    </mat-card>
-  </div>
+        Don't have an account? Signup</p>
+    </form>
+  </mat-card>
+</div>
