@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 import { ApiService } from '../../api.service';
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -28,9 +28,9 @@ export class RegisterComponent implements OnInit {
 
   openDialog(values): void {
     const dialogRef = this.dialog.open(Alert, {
-      width: '400px',
-      height: '400px',
-      data: { 
+      width: '70%',
+      height: '50%',
+      data: {
         text: values.text,
         button: values.button,
         heading: values.heading,
@@ -66,6 +66,16 @@ export class RegisterComponent implements OnInit {
         this.aadhar = null;
         this.phnno = null;
         if (Object(res).msg === 'User registered successfully') {
+<<<<<<< HEAD
+          var data = {
+            text: 'Kindly verify your email ID',
+            button: 'Close',
+            heading: 'TODO',
+            bigHeading: 'Registered successfully :)'
+          }
+          this.openDialog(data);
+          this.router.navigate(['/login']);
+=======
           // var data = {
           //   text: 'Check your email to verify your account',
           //   button: 'Close',
@@ -74,6 +84,7 @@ export class RegisterComponent implements OnInit {
           // }
           // this.openDialog(data);
           this.router.navigate(['/otp']);
+>>>>>>> master
         } else if (Object(res).msg === 'Email already exists') {
           var data = {
             text: 'Email already exists',
@@ -92,7 +103,7 @@ export class RegisterComponent implements OnInit {
           this.openDialog(data);
         } else {
           var data = {
-            text: 'There was a problem while registering the user',
+            text: 'Problem while registering',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Registration failed :('

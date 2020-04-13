@@ -17,10 +17,10 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
     <div class="navbar-nav">
 
-      <a class="nav-item nav-link active" *ngIf="!loggedIn" mat-button routerLink="login"
-        routerLinkActive="active">Login</a>
-      <a class="nav-item nav-link" *ngIf="!loggedIn" mat-button routerLink="register"
-        routerLinkActive="active">Signup</a>
+      <a class="nav-item nav-link active" data-toggle="collapse" data-target=".navbar-collapse.show" *ngIf="!loggedIn"
+        mat-button routerLink="login" routerLinkActive="active">Login</a>
+      <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" *ngIf="!loggedIn"
+        mat-button routerLink="register" routerLinkActive="active">Signup</a>
       <a class="nav-item nav-link" *ngIf="loggedIn" mat-button href="mailto:covid19pollachi@gmail.com"
         target="_blank">Help</a>
       <a *ngIf="loggedIn" mat-button (click)="logout()">Logout</a>

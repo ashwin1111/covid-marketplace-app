@@ -23,9 +23,10 @@ export class LogInComponent implements OnInit {
 
   openDialog(values): void {
     const dialogRef = this.dialog.open(Alert, {
+      panelClass: 'my-dialog',
       width: '400px',
       height: '400px',
-      data: { 
+      data: {
         text: values.text,
         button: values.button,
         heading: values.heading,
@@ -55,7 +56,7 @@ export class LogInComponent implements OnInit {
           this.router.navigate(['/book-marketplace']);
         } else if (Object(res).error.msg === 'Account not verified') {
           var data = {
-            text: 'Account not verified, please check your email for confirmation email',
+            text: 'Email verification pending',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Login failed :('
@@ -63,7 +64,7 @@ export class LogInComponent implements OnInit {
           this.openDialog(data);
         } else if (Object(res).error.msg === 'No user found with the given creds') {
           var data = {
-            text: 'No user found with the given creds',
+            text: 'User not found',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Login failed :('
@@ -71,7 +72,7 @@ export class LogInComponent implements OnInit {
           this.openDialog(data);
         } else if (Object(res).error.msg === 'Invalid creds') {
           var data = {
-            text: 'Invalid creds',
+            text: 'Invalid credentials',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Login failed :('
@@ -79,7 +80,7 @@ export class LogInComponent implements OnInit {
           this.openDialog(data);
         } else {
           var data = {
-            text: 'There was a problem while logging in the user',
+            text: 'Problem while logging',
             button: 'Close',
             heading: 'Reason',
             bigHeading: 'Login failed :('
