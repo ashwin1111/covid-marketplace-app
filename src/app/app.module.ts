@@ -25,6 +25,8 @@ import { VerifiedComponent } from './components/verified/verified.component';
 import { Alert } from './components/modal/alert.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
 import { ScannerComponent } from './components/scanner/scanner.component';
+import { OtpComponent } from './components/otp/otp.component';
+import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +38,9 @@ import { ScannerComponent } from './components/scanner/scanner.component';
     Alert,
     VerifiedComponent,
     BookMarketplaceComponent,
-    ScannerComponent
-
+    ScannerComponent,
+    OtpComponent,
+    ResendOtpComponent
   ],
   imports: [
     BrowserModule,
