@@ -86,14 +86,6 @@ export class BookMarketplaceComponent implements OnInit {
         bigHeading: 'Booking failed :('
       }
       this.openDialog(data);
-    } else if (Object(res).error && Object(res).error.msg === 'Not a valid URL') {
-      var data = {
-        text: 'Please enter a valid URL',
-        button: 'Close',
-        heading: 'Reason',
-        bigHeading: 'Creating Short Url failed :('
-      }
-      this.openDialog(data);
     } else {
       var data = {
         text: 'Problem while booking your slot',
