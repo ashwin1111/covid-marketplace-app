@@ -23,7 +23,8 @@
         mat-button routerLink="register" routerLinkActive="active">Signup</a>
       <a class="nav-item nav-link" *ngIf="loggedIn" mat-button href="mailto:covid19pollachi@gmail.com"
         target="_blank">Help</a>
-      <a *ngIf="loggedIn" mat-button (click)="logout()">Logout</a>
+      <a *ngIf="loggedIn" class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+        mat-button (click)="logout()">Logout</a>
     </div>
 
   </div>
