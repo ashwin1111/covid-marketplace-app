@@ -66,16 +66,6 @@ export class RegisterComponent implements OnInit {
         this.aadhar = null;
         this.phnno = null;
         if (Object(res).msg === 'User registered successfully') {
-<<<<<<< HEAD
-          var data = {
-            text: 'Kindly verify your email ID',
-            button: 'Close',
-            heading: 'TODO',
-            bigHeading: 'Registered successfully :)'
-          }
-          this.openDialog(data);
-          this.router.navigate(['/login']);
-=======
           // var data = {
           //   text: 'Check your email to verify your account',
           //   button: 'Close',
@@ -84,7 +74,6 @@ export class RegisterComponent implements OnInit {
           // }
           // this.openDialog(data);
           this.router.navigate(['/otp']);
->>>>>>> master
         } else if (Object(res).msg === 'Email already exists') {
           var data = {
             text: 'Email already exists',
