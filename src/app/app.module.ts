@@ -26,7 +26,10 @@ import { Alert } from './components/modal/alert.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
 import { ScannerComponent } from './components/scanner/scanner.component';
 import { OtpComponent } from './components/otp/otp.component';
+import { OtpComponent2 } from './components/otp2/otp2.component';
 import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { QrComponent } from './components/qr/qr.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { ResendOtpComponent } from './components/resend-otp/resend-otp.component
     BookMarketplaceComponent,
     ScannerComponent,
     OtpComponent,
-    ResendOtpComponent
+    ResendOtpComponent,
+    OtpComponent2,
+    QrComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import { ResendOtpComponent } from './components/resend-otp/resend-otp.component
     FormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ZXingScannerModule
   ],
   providers: [NgxSpinnerModule, NgxSpinnerService],
   bootstrap: [AppComponent],

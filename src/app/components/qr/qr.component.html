@@ -1,0 +1,2 @@
+<p style="text-align: center;">Point the camera to the QR!</p>
+<zxing-scanner #scanner start="true" [device]="currentDevice" (scanSuccess)="handleQrCodeResult($event)" [formats]="['QR_CODE', 'EAN_13', 'CODE_128', 'DATA_MATRIX']"></zxing-scanner>

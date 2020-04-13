@@ -6,6 +6,7 @@ import { VerifiedComponent } from './components/verified/verified.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
 import { ScannerComponent } from './components/scanner/scanner.component';
 import { OtpComponent } from './components/otp/otp.component';
+import { OtpComponent2 } from './components/otp2/otp2.component';
 import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'book-marketplace', component: BookMarketplaceComponent },
   { path: 'QRscanner', component: ScannerComponent },
   { path: 'otp', component: OtpComponent },
-  { path: 'resend-otp', component: ResendOtpComponent }
+  { path: 'resend-otp', component: ResendOtpComponent },
+  { path: 'qr-scan', component: OtpComponent2 }
 ];
 
 @NgModule({
