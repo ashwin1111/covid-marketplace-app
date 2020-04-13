@@ -6,6 +6,7 @@ import { VerifiedComponent } from './components/verified/verified.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';
 import { OtpComponent } from './components/otp/otp.component';
 import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
+import { DisplayBookingComponent } from './components/display-booking/display-booking.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'book-marketplace' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'verified', component: VerifiedComponent },
   { path: 'book-marketplace', component: BookMarketplaceComponent },
   { path: 'otp', component: OtpComponent },
-  { path: 'resend-otp', component: ResendOtpComponent }
+  { path: 'resend-otp', component: ResendOtpComponent },
+  { path: 'display-booking', component: DisplayBookingComponent }
 ];
 
 @NgModule({
