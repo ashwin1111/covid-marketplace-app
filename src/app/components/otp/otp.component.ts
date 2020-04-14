@@ -25,19 +25,25 @@ export class OtpComponent implements OnInit {
 
 
   openDialog(values): void {
+    var data = {
+      text: values.text,
+      button: values.button,
+      heading: values.heading,
+      bigHeading: values.bigHeading
+    };
+
     const dialogRef = this.dialog.open(Alert, {
       width: '400px',
       height: '400px',
-      data: {
-        text: values.text,
-        button: values.button,
-        heading: values.heading,
-        bigHeading: values.bigHeading
-      }
+      data: data
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      // console.log('The dialog was closed');
+      if (data.text === 'Verification successful') {
+        this.router.navigate(['/login']);
+      } else if (data.text === 'OTP expired') {
+        this.router.navigate(['/resend-otp']);
+      }
     });
   }
 
@@ -49,9 +55,11 @@ export class OtpComponent implements OnInit {
     };
 
     var baseUrl = this.apiService.getBaseUrl();
+    this.spinner.show();
 
     this.apiService.apiCall(baseUrl + '/auth/verify', data).then(res => {
-      if (Object(res).auth === true && Object(res).msg === 'User verified') {
+      this.otp = null;
+      if (Object(res).msg === 'User verified') {
         var data = {
           text: 'Verification successful',
           button: 'Close',

@@ -12,7 +12,7 @@ export class ApiService {
 
   getBaseUrl() {
     var local = 'http://localhost:5555';
-    var prod = 'https://urlll.xyz';
+    var prod = 'https://covid19-pollachi.herokuapp.com';
     return local;
   }
 
