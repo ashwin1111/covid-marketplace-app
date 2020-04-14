@@ -170,3 +170,8 @@ my-dialog {
   height: 60% !important;
 
 }
+
+
+textarea {
+  height: 20px !important;
+}
