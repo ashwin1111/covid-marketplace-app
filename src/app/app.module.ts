@@ -20,7 +20,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { VerifiedComponent } from './components/verified/verified.component';
 import { Alert } from './components/modal/alert.component';
 import { BookMarketplaceComponent } from './components/book-marketplace/book-marketplace.component';

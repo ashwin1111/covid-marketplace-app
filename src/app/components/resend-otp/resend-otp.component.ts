@@ -36,7 +36,7 @@ export class ResendOtpComponent implements OnInit {
       // console.log('The dialog was closed');
     });
   }
- 
+
   submitOtp() {
     var data = {
       phno: this.phno
@@ -49,7 +49,7 @@ export class ResendOtpComponent implements OnInit {
         this.router.navigate(['/otp']);
       } else if (Object(res).msg === 'Limit exceeded') {
         var data = {
-          text: 'Limit exceeded for sending OTP',
+          text: 'OTP Limit exceeded',
           button: 'Close',
           heading: 'Reason',
           bigHeading: 'Sending OTP failed :('
@@ -57,7 +57,7 @@ export class ResendOtpComponent implements OnInit {
         this.openDialog(data);
       } else {
         var data = {
-          text: `There was a problem with the OTP verification, our team is notified they'll assist you`,
+          text: `Problem with OTP`,
           button: 'Close',
           heading: 'Reason',
           bigHeading: 'Sending OTP failed :('
@@ -66,7 +66,7 @@ export class ResendOtpComponent implements OnInit {
       }
     });
   }
- 
+
   ngOnInit(): void {
     this.phnoAvailable = localStorage.getItem('otp_phn')
     this.phno = this.phnoAvailable;

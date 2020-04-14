@@ -53,7 +53,7 @@ export class OtpComponent implements OnInit {
     this.apiService.apiCall(baseUrl + '/auth/verify', data).then(res => {
       if (Object(res).auth === true && Object(res).msg === 'User verified') {
         var data = {
-          text: 'Thanks for verifying your phone number',
+          text: 'Verification successful',
           button: 'Close',
           heading: 'Reason',
           bigHeading: 'Account Verified'
@@ -61,7 +61,7 @@ export class OtpComponent implements OnInit {
         this.openDialog(data);
       } else if (Object(res).error.msg === 'OTP expired') {
         var data = {
-          text: 'Sorry to inform you that your OTP has expired, you can generate a new otp by clicking Re-send otp below',
+          text: 'OTP expired',
           button: 'Close',
           heading: 'Reason',
           bigHeading: 'Account Verification failed :('
@@ -69,7 +69,7 @@ export class OtpComponent implements OnInit {
         this.openDialog(data);
       } else if (Object(res).error.msg === 'Invalid OTP') {
         var data = {
-          text: 'Invalid OTP, please try with the right OTP',
+          text: 'Invalid OTP',
           button: 'Close',
           heading: 'Reason',
           bigHeading: 'Account Verification failed :('
@@ -77,7 +77,7 @@ export class OtpComponent implements OnInit {
         this.openDialog(data);
       } else {
         var data = {
-          text: `There was a problem with the OTP verification, our team is notified they'll assist you`,
+          text: `Problem with OTP`,
           button: 'Close',
           heading: 'Reason',
           bigHeading: 'Account Verification failed :('

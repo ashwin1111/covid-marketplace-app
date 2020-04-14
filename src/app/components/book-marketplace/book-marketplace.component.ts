@@ -70,10 +70,12 @@ export class BookMarketplaceComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       if (this.data.text === 'Slot booked successfully') {
-        this.router.navigate(['/display-booking'], {queryParams: {
-          filename: this.filename,
-          code: this.code
-        }});
+        this.router.navigate(['/display-booking'], {
+          queryParams: {
+            filename: this.filename,
+            code: this.code
+          }
+        });
       }
     });
   }
@@ -93,7 +95,7 @@ export class BookMarketplaceComponent implements OnInit {
       this.displayQr = true;
     } else if (Object(res).msg === 'Sorry you Already booked this slot for today :)') {
       var data = {
-        text: 'Sorry you Already booked this slot for today',
+        text: 'Slot Booked already:)',
         button: 'Close',
         heading: 'Reason',
         bigHeading: 'Booking failed :('
@@ -101,7 +103,7 @@ export class BookMarketplaceComponent implements OnInit {
       this.openDialog(data);
     } else {
       var data = {
-        text: 'Problem while booking your slot',
+        text: 'Problem while booking :(',
         button: 'Close',
         heading: 'Reason',
         bigHeading: 'Booking failed :('

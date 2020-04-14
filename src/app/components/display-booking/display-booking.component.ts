@@ -11,7 +11,7 @@ export class DisplayBookingComponent implements OnInit {
   constructor(
     private router: Router
   ) {
-    this.queryParams =  this.router.getCurrentNavigation().extras.queryParams;
+    this.queryParams = this.router.getCurrentNavigation().extras.queryParams;
   }
 
   queryParams: any;

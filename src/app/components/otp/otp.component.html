@@ -1,39 +1,42 @@
 <div class="login-wrapper " fxLayout="row" fxLayoutAlign="center center" style="font-family: 'Montserrat', sans-serif;">
 
-    <mat-card class="box"
-      style="border: rgb(172, 164, 164) 2px solid;border-radius: 30px;box-shadow: 5px 10px #888888;width: 95%;">
-  
-      <mat-card-header>
-        <mat-card-title>Verify OTP</mat-card-title>
-      </mat-card-header>
-  
-      <form class="example-form">
-        <mat-card-content>
-          <br>
-          <mat-form-field *ngIf="!phnoAvailable" class="example-full-width">
-            <input matInput placeholder="Mobile Number" name="phno" [(ngModel)]="phno" required>
-          </mat-form-field>
+  <mat-card class="box"
+    style="border: rgb(172, 164, 164) 2px solid;border-radius: 30px;box-shadow: 5px 10px #888888;width: 95%;">
 
-          <mat-form-field *ngIf="phnoAvailable" class="example-full-width">
-            <input matInput placeholder="Mobile Number" name="phno" [(ngModel)]="phno" readonly>
-          </mat-form-field>
-  
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="OTP" type="otp" name="otp" [(ngModel)]="otp" required>
-          </mat-form-field>
-        </mat-card-content>
-        <button mat-stroked-button color="accent" class="btn-block" (click)="submitOtp()">Submit</button>
-        <br><br>
-        <p routerLink="/resend-otp" routerLinkActive="active" style="
+    <mat-card-header>
+      <mat-card-title>Verify OTP</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form">
+      <mat-card-content>
+        <br>
+        <mat-form-field *ngIf="!phnoAvailable" class="example-full-width">
+          <input matInput placeholder="Mobile Number" name="phno" [(ngModel)]="phno" required>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="phnoAvailable" class="example-full-width">
+          <input matInput placeholder="Mobile Number" name="phno" [(ngModel)]="phno" readonly>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="OTP" type="otp" name="otp" [(ngModel)]="otp" required>
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block" (click)="submitOtp()">Submit</button>
+      <br><br>
+      <p routerLink="/resend-otp" routerLinkActive="active" style="
           text-align: center;
           font-size: 16px;
           padding-top: 10px;
           color: #3f3dca;
           cursor: pointer;
           margin: 0;">
-          Didn't receive the OTP? Wait upto 3 minutes</p>
-  
-      </form>
-    </mat-card>
-  
-  </div>
+        Didn't receive the OTP? Wait upto 3 minutes</p>
+
+    </form>
+  </mat-card>
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Please Wait. </p>
+  </ngx-spinner>
+
+</div>

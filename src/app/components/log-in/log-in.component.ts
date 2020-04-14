@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router"
 import { ApiService } from '../../api.service';
-import { NgxSpinnerService } from "ngx-spinner";
+import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Alert } from '../modal/alert.component';
 
@@ -97,6 +97,7 @@ export class LogInComponent implements OnInit {
 
   ngOnInit() {
     this.spinner.show();
+
     if (localStorage.getItem('x-access-token') !== null) {
       this.router.navigate(['/book-marketplace']);
     }
