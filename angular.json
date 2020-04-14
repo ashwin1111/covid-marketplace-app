@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/instascan.min.js"
+
             ]
           },
           "configurations": {
