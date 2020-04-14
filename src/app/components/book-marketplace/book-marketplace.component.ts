@@ -22,22 +22,68 @@ export class BookMarketplaceComponent implements OnInit {
     public myapp: AppComponent,
     private spinner: NgxSpinnerService
   ) {
-    this.timeslotUpdate.pipe(
+    this.dateslotUpdate.pipe(
       debounceTime(100),
       distinctUntilChanged())
       .subscribe(value => {
-        var obj = this.marketPlacesCollection.filter(f => f.market_place_id === value);
-        obj = obj[0].time_slot_data;
-        obj.forEach(element => {
-          this.timeslotCollection.push({
-            timeSlotIds: element.id,
-            timeSlotRanges: element.time_slot_range
-          });
+        var date = new Date(value);
+        var month = date.getMonth()+1;
+        var monthString;
+        if (month < 10) {
+          monthString = '0' + month.toString();
+        } else {
+          monthString = month.toString();
+        }
+        this.dateString = date.getFullYear().toString() + '-' + date.getDate().toString() + '-' + monthString;
+        this.spinner.show();
+        this.apiService.getApiCall(this.apiService.getBaseUrl() + '/user/MarketPlaces?on_date='+this.dateString).then(res => {
+          if (Object(res).msg === 'No Market-Place details found with the active status for that date') {
+            var data = {
+              text: 'No Market-Place details for selected date',
+              button: 'Close',
+              heading: 'Reason',
+              bigHeading: 'Booking failed :('
+            }
+            this.openDialog(data);
+          } else {
+            this.marketPlacesCollection = Object(res).marketPlaces;
+            Object(res).marketPlaces.forEach(element => {
+              this.marketPlaces.push({
+                value: element.market_place_id,
+                viewValue: element.market_palce_name
+              });
+            });
+          }
+          this.spinner.hide();
+        }).catch(err => {
+          // console.log(err);
+          this.spinner.hide();
         });
       });
+
+      this.timeslotUpdate.pipe(
+        debounceTime(100),
+        distinctUntilChanged())
+        .subscribe(value => {
+          var obj = this.marketPlacesCollection.filter(f => f.market_place_id === value);
+          obj = obj[0].time_slot_data;
+          obj.forEach(element => {
+            this.timeslotCollection.push({
+              timeSlotIds: element.id,
+              timeSlotRanges: element.time_slot_range
+            });
+          });
+        });
   }
 
+  dateString: any;
+  // year, month - 1, date, 0, 0
+  invalidMoment =  new Date(2020, 3, 14, 0, 0);
+  min = new Date(2020, 3, 14, 0, 0);
+  max = new Date(2021, 3, 14, 0, 0);
+  dateSelected: any;
   timeslotUpdate = new Subject<string>();
+  dateslotUpdate = new Subject<string>();
   marketPlaces = [];
   timeslotCollection = [];
   select: any;
@@ -52,7 +98,7 @@ export class BookMarketplaceComponent implements OnInit {
   marketPlacesCollection: any;
   select2: any;
   filename: any;
-  code = '8923';
+  code: any;
   displayQr = false;
 
   openDialog(values): void {
@@ -83,15 +129,8 @@ export class BookMarketplaceComponent implements OnInit {
   validateResult(res) {
     // TODO: handle all cases
     if (Object(res).msg === 'Slot booked successfully') {
-      this.filename = 'https://testtest.s3.us-east-2.amazonaws.com/' + Object(res).file;
-      // this.code = Object(res).code;
-      // var data = {
-      //   text: 'Slot booked successfully',
-      //   button: 'Close',
-      //   heading: 'Reason',
-      //   bigHeading: 'Slot booked!'
-      // }
-      // this.openDialog(data);
+      this.filename = Object(res).file;
+      this.code = Object(res).code;
       this.displayQr = true;
     } else if (Object(res).msg === 'Sorry you Already booked this slot for today :)') {
       var data = {
@@ -129,7 +168,8 @@ export class BookMarketplaceComponent implements OnInit {
       market_place_id: this.select,
       time_slot_id: this.select2,
       aadhar: this.aadhar,
-      time_slot: time_slot
+      time_slot: time_slot,
+      on_date: this.dateString
     };
 
     this.apiService.apiCall(baseUrl + '/user/book_slot', data).then(res => {
@@ -150,25 +190,10 @@ export class BookMarketplaceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.spinner.show();
     this.isLoggedIn = this.myapp.refreshAppComponent();
     if (this.isLoggedIn === false) {
       this.router.navigate(['/login']);
     } else {
-      this.apiService.getApiCall(this.apiService.getBaseUrl() + '/user/MarketPlaces').then(res => {
-        this.marketPlacesCollection = Object(res).marketPlaces;
-        Object(res).marketPlaces.forEach(element => {
-          this.marketPlaces.push({
-            value: element.market_place_id,
-            viewValue: element.market_palce_name
-          });
-        });
-        this.spinner.hide();
-      }).catch(err => {
-        // console.log(err);
-        this.spinner.hide();
-      });
-
       var user = JSON.parse(localStorage.getItem('user'));
       this.name = user.name;
       this.aadhar = user.aadhar;
