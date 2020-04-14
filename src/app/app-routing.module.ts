@@ -8,6 +8,9 @@ import { OtpComponent } from './components/otp/otp.component';
 import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
 import { DisplayBookingComponent } from './components/display-booking/display-booking.component';
 
+import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'book-marketplace' },
   { path: 'login', component: LogInComponent },
@@ -16,7 +19,9 @@ const routes: Routes = [
   { path: 'book-marketplace', component: BookMarketplaceComponent },
   { path: 'otp', component: OtpComponent },
   { path: 'resend-otp', component: ResendOtpComponent },
-  { path: 'display-booking', component: DisplayBookingComponent }
+  { path: 'display-booking', component: DisplayBookingComponent },
+  { path: 'booking-details', component: BookingDetailsComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({

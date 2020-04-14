@@ -59,13 +59,23 @@
         Don't have an account? Signup</p>
     </form>
   </mat-card>
-  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
-    <p style="color: white">Please Wait. </p>
-  </ngx-spinner>
+
 </div>
-<div *ngIf="displayQr === true" class="login-wrapper" fxLayout="row" fxLayoutAlign="center center"
-  style="font-family:Montserrat, sans-serif">
-  Screenshot
-  <img src="{{filename}}" height="30%" width="50%">
-  <p> Booking ID: {{code}} </p>
+
+<div *ngIf="displayQr === true" style="font-family:Montserrat, sans-serif;text-align: center;display: block!important;border: solid 1px black;
+  margin: 30px;padding:10px">
+
+  <img src="/src/assets/approved.png" width="100px"><br>
+  <h2>Booking Successsful!</h2>
+  <br>
+
+
+  <img src="{{filename}}" height="200px" width="200px">
+  <p>Booking ID: <b> {{code}}4</b> </p>
+
+  <p>Screenshot the QR code for future reference.<br>
+    Alternatively, find the QR codes with Booking details<br> in <a router="display-booking"><b> Booking
+      </b></a> section</p>
+
+
 </div>

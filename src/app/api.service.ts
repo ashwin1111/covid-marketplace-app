@@ -13,7 +13,7 @@ export class ApiService {
   getBaseUrl() {
     var local = 'http://localhost:5555';
     var prod = 'https://covid19-pollachi.herokuapp.com';
-    return local;
+    return prod;
   }
 
   getApiCall(apiUrl): Promise<void | Object> {
@@ -23,14 +23,14 @@ export class ApiService {
     if (token !== null) {
       httpOptions = {
         headers: new HttpHeaders({
-          'Content-Type':  'application/json',
+          'Content-Type': 'application/json',
           'x-access-token': token
         })
-      }; 
+      };
     } else {
       httpOptions = {
         headers: new HttpHeaders({
-          'Content-Type':  'application/json'
+          'Content-Type': 'application/json'
         })
       };
     }
@@ -49,14 +49,14 @@ export class ApiService {
     if (token !== null) {
       httpOptions = {
         headers: new HttpHeaders({
-          'Content-Type':  'application/json',
+          'Content-Type': 'application/json',
           'x-access-token': token
         })
-      }; 
+      };
     } else {
       httpOptions = {
         headers: new HttpHeaders({
-          'Content-Type':  'application/json'
+          'Content-Type': 'application/json'
         })
       };
     }
