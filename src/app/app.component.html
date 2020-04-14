@@ -6,10 +6,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="tobeadded">QR Scanner <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" routerLink="profile" *ngIf="loggedIn" routerLinkActive="active">Profile</a>
-      <a class="nav-item nav-link" routerLink="book-marketplace" routerLinkActive="active">Book-marketplace</a>
-      <a class="nav-item nav-link" routerLink="display-booking" *ngIf="loggedIn" routerLinkActive="active">Bookings</a>
+      <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" href="tobeadded">QR
+        Scanner <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" routerLink="profile"
+        *ngIf="loggedIn" routerLinkActive="active">Profile</a>
+      <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+        routerLink="book-marketplace" routerLinkActive="active">Book-marketplace</a>
+      <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+        routerLink="display-booking" *ngIf="loggedIn" routerLinkActive="active">Bookings</a>
 
     </div>
 
