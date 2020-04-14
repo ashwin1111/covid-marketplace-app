@@ -27,6 +27,7 @@ import { BookMarketplaceComponent } from './components/book-marketplace/book-mar
 import { OtpComponent } from './components/otp/otp.component';
 import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
 import { DisplayBookingComponent } from './components/display-booking/display-booking.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -55,7 +56,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     FormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   ],
   providers: [NgxSpinnerModule, NgxSpinnerService],
   bootstrap: [AppComponent],

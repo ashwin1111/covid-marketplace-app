@@ -23,7 +23,14 @@
           <input matInput placeholder="Phone (+91)" name="phno" [(ngModel)]="phno">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
+        <label class="example-full-width">
+          Select Date:
+          <input name="invalidMoment" [(ngModel)]="dateSelected"  [owlDateTimeTrigger]="dt3"
+            [owlDateTime]="dt3" #dateTime="ngModel" class="example-full-width" (ngModelChange)="this.dateslotUpdate.next($event)">
+          <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+        </label>
+
+        <mat-form-field *ngIf="marketPlacesCollection" class="example-full-width">
           <mat-label>Select Marketplace</mat-label>
           <mat-select name="select" [(ngModel)]="select" (ngModelChange)="this.timeslotUpdate.next($event)">
             <mat-option *ngFor="let food of marketPlaces" [value]="food.value">
@@ -32,7 +39,7 @@
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field *ngIf="marketPlacesCollection" class="example-full-width">
           <mat-label>Select Time Slot</mat-label>
           <mat-select name="select2" [(ngModel)]="select2">
             <mat-option *ngFor="let food of timeslotCollection" [value]="food.timeSlotIds">
@@ -65,7 +72,7 @@
 <div *ngIf="displayQr === true" style="font-family:Montserrat, sans-serif;text-align: center;display: block!important;border: solid 1px black;
   margin: 30px;padding:10px">
 
-  <img src="/src/assets/approved.png" width="100px"><br>
+  <img src="assets/approved.png" width="100px"><br>
   <h2>Booking Successsful!</h2>
   <br>
 
