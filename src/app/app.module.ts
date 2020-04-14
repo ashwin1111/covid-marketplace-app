@@ -28,6 +28,8 @@ import { OtpComponent } from './components/otp/otp.component';
 import { ResendOtpComponent } from './components/resend-otp/resend-otp.component';
 import { DisplayBookingComponent } from './components/display-booking/display-booking.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     BookMarketplaceComponent,
     OtpComponent,
     ResendOtpComponent,
-    DisplayBookingComponent
+    DisplayBookingComponent,
+    BookingDetailsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
