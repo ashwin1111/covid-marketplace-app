@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
       var baseUrl = this.apiService.getBaseUrl();
 
       this.apiService.apiCall(baseUrl + '/auth/register', data).then(res => {
-        localStorage.set('otp_phn', this.phnno);
+        localStorage.setItem('otp_phn', this.phnno);
         this.name = null;
         this.email = null;
         this.password = null;
@@ -66,13 +66,6 @@ export class RegisterComponent implements OnInit {
         this.aadhar = null;
         this.phnno = null;
         if (Object(res).msg === 'User registered successfully') {
-          // var data = {
-          //   text: 'Check your email to verify your account',
-          //   button: 'Close',
-          //   heading: 'TODO',
-          //   bigHeading: 'Registered successfully :)'
-          // }
-          // this.openDialog(data);
           this.router.navigate(['/otp']);
         } else if (Object(res).msg === 'Email already exists') {
           var data = {

@@ -69,7 +69,7 @@ export class BookMarketplaceComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      if (this.data.text === 'Slot booked successfully') {
+      if (data.text === 'Slot booked successfully') {
         this.router.navigate(['/display-booking'], {
           queryParams: {
             filename: this.filename,
