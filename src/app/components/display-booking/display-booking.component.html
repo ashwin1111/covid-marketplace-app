@@ -1,1 +1,24 @@
-<p>display-booking works!</p>
+<div class="container p-4">
+
+
+  <div class="m-1 p-2" *ngFor="let hero of heroes">
+
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-5">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Booked Place - {{hero}}</h5>
+            <p class="card-text">Time Slots booked</p>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3 pt-4"><a href="booking-details" class="btn btn-primary">Details</a></div>
+    </div>
+
+  </div>
+
+</div>

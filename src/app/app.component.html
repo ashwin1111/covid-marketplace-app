@@ -7,7 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="tobeadded">QR Scanner <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="profile" *ngIf="loggedIn" routerLinkActive="active">Profile</a>
       <a class="nav-item nav-link" routerLink="book-marketplace" routerLinkActive="active">Book-marketplace</a>
+      <a class="nav-item nav-link" routerLink="display-booking" *ngIf="loggedIn" routerLinkActive="active">Bookings</a>
+
     </div>
 
   </div>
@@ -20,24 +23,18 @@
         mat-button routerLink="register" routerLinkActive="active">Signup</a>
       <a class="nav-item nav-link" *ngIf="loggedIn" mat-button href="mailto:covid19pollachi@gmail.com"
         target="_blank">Help</a>
-      <a class="nav-item nav-link" *ngIf="loggedIn" mat-button data-toggle="collapse" data-target=".navbar-collapse.show" (click)="logout()">Logout</a>
+      <a class="nav-item nav-link" *ngIf="loggedIn" mat-button data-toggle="collapse"
+        data-target=".navbar-collapse.show" (click)="logout()">Logout</a>
     </div>
 
   </div>
 </nav>
 
 
-<!-- Toolbar
-<mat-toolbar class="app-header">
-  <div><a routerLink="book-marketplace" class="positronx">Covid Marketplace</a></div>
-  <span class="nav-tool-items" style="color: white">
-    <a *ngIf="!loggedIn" mat-button routerLink="login" routerLinkActive="active">Login</a>
-    <a *ngIf="!loggedIn" mat-button routerLink="register" routerLinkActive="active">Signup</a>
-    <a *ngIf="loggedIn" mat-button href="mailto:covid19pollachi@gmail.com" target="_blank">Help</a>
-    <a *ngIf="loggedIn" mat-button (click)="logout()">Logout</a>
-  </span>
-</mat-toolbar>
-<ngx-spinner bdOpacity=0.9 size="large"></ngx-spinner> -->
+
+
+
+<ngx-spinner bdOpacity=0.9 size="large"></ngx-spinner>
 
 
 <router-outlet></router-outlet>

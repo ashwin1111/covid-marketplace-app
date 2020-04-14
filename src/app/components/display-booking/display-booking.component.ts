@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router"
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-display-booking',
@@ -8,6 +9,9 @@ import { Router } from "@angular/router"
 })
 export class DisplayBookingComponent implements OnInit {
 
+  title = 'Tour of Heroes';
+  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+  myHero = this.heroes[0];
   constructor(
     private router: Router
   ) {
