@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to url-shortener-app!');
+    expect(page.getTitleText()).toEqual('Welcome to covid19-marketplace!');
   });
 
   afterEach(async () => {
