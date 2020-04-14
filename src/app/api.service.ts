@@ -12,8 +12,8 @@ export class ApiService {
 
   getBaseUrl() {
     var local = 'http://localhost:5555';
-    var prod = 'https://urlll.xyz';
-    return local;
+    var prod = 'https://covid19-pollachi.herokuapp.com';
+    return prod;
   }
 
   getApiCall(apiUrl): Promise<void | Object> {
