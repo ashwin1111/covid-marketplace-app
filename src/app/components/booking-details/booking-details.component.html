@@ -31,14 +31,14 @@
           </tr>
           <tr>
             <th scope="row">Booked at</th>
-            <td> {{data.created_at | date: 'HH:MM:SS'}}<br>({{data.created_at | date: 'yyyy-dd-MM' }})</td>
+            <td> {{data.created_at | date: 'HH:MM:SS O'}}<br>({{data.created_at | date: 'yyyy-MM-dd' }})</td>
 
           </tr>
-          <tr>
+          <!-- <tr>
             <th scope="row">Status</th>
             <td>Valid</td>
 
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>

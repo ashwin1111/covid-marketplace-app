@@ -34,7 +34,7 @@ export class BookMarketplaceComponent implements OnInit {
         } else {
           monthString = month.toString();
         }
-        this.dateString = date.getFullYear().toString() + '-' + date.getDate().toString() + '-' + monthString;
+        this.dateString = date.getFullYear().toString() + '-' + monthString + '-' + date.getDate().toString();
         this.spinner.show();
         this.apiService.getApiCall(this.apiService.getBaseUrl() + '/user/MarketPlaces?on_date='+this.dateString).then(res => {
           if (Object(res).msg === 'No Market-Place details found with the active status for that date') {
