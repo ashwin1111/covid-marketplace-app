@@ -66,7 +66,7 @@ export class BookMarketplaceComponent implements OnInit {
         distinctUntilChanged())
         .subscribe(value => {
           var obj = this.marketPlacesCollection.filter(f => f.market_place_id === value);
-          obj = obj[0].time_slot_data;
+          obj = obj[0].json_agg;
           obj.forEach(element => {
             this.timeslotCollection.push({
               timeSlotIds: element.id,
@@ -156,7 +156,7 @@ export class BookMarketplaceComponent implements OnInit {
     var time_slot;
     this.marketPlacesCollection.filter(f => {
       if (f.market_place_id === this.select) {
-        f.time_slot_data.filter(f2 => {
+        f.json_agg.filter(f2 => {
           if (f2.id === this.select2) {
             time_slot = f2.time_slot_range;
           }
