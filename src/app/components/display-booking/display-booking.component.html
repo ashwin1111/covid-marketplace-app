@@ -1,22 +1,23 @@
 <div class="container p-4">
 
 
-  <div class="m-1 p-2" *ngFor="let hero of heroes">
+  <div class="m-1 p-2" *ngFor="let hero of timeslot;let i = index">
 
     <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-5">
         <div class="card" style="border-color: cadetblue;">
           <div class="card-body">
-            <h5 class="card-title">Booked Place - {{hero}}</h5>
-            <p class="card-text">Time Slots booked</p>
+            <h5 class="card-title">{{timeslot[i].data.name}}</h5>
+            <p class="card-text">{{timeslot[i].data.time}}</p>
+            <p class="card-text">{{timeslot[i].data.date}}</p>
 
           </div>
         </div>
       </div>
 
 
-      <div class="col-sm-3 pt-4"><a href="booking-details" class="btn btn-secondary">Details</a></div>
+      <div class="col-sm-3 pt-4"><a (click)="redirect(timeslot[i].data.id)" class="btn btn-secondary">Details</a></div>
     </div>
 
   </div>

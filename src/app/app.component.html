@@ -1,19 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="book-marketplace" routerLinkActive="active">COVID-19 | </a>
+  <a class="navbar-brand" routerLink="book-marketplace" routerLinkActive="active">COVID-19</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" href="tobeadded">QR
-        Scanner <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" routerLink="profile"
         *ngIf="loggedIn" routerLinkActive="active">Profile</a>
       <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
-        routerLink="book-marketplace" routerLinkActive="active">Book-marketplace</a>
+        routerLink="book-marketplace" routerLinkActive="active">Book Marketplace</a>
       <a class="nav-item nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
-        routerLink="display-booking" *ngIf="loggedIn" routerLinkActive="active">Bookings</a>
+        routerLink="display-booking" *ngIf="loggedIn" routerLinkActive="active">Booking History</a>
 
     </div>
 

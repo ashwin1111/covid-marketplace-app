@@ -4,29 +4,34 @@
 
     <div class="col-sm-4">
       <img class=""
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png"
+        src="{{data.qr}}"
         width="300px">
-      <h3>QR code: #9129</h3>
+      <h3>Code: {{data.code}}</h3>
 
     </div>
     <div class="col-sm-6 p-5">
       <table class="table text-left">
         <thead>
           <tr>
-            <th scope="col">Market Place</th>
-            <td scope="col">Somanur Kai Kari Santhai</td>
+            <th scope="col">Market Name</th>
+            <td scope="col">{{data.name}}</td>
+
+          </tr>
+          <tr>
+            <th scope="col">Market Address</th>
+            <td scope="col">{{data.address}}</td>
 
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">Time Slots</th>
-            <td>8.30 AM - 9.30 AM (15-04-2020)</td>
+            <td>{{data.time}} ({{data.date}})</td>
 
           </tr>
           <tr>
-            <th scope="row">Generated at</th>
-            <td>10.30 AM | 14-04-2020</td>
+            <th scope="row">Booked at</th>
+            <td> {{data.created_at | date: 'HH:MM:SS'}}<br>({{data.created_at | date: 'yyyy-dd-MM' }})</td>
 
           </tr>
           <tr>
