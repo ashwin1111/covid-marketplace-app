@@ -155,6 +155,7 @@ my-dialog {
 
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
+  word-break: break-all;
 }
 
 .mat-radio-button~.mat-radio-button {
