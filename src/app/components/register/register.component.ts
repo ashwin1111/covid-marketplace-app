@@ -44,6 +44,45 @@ export class RegisterComponent implements OnInit {
   }
 
   signup() {
+    if( typeof this.name === 'undefined' || typeof this.email === 'undefined' || typeof this.aadhar === 'undefined' || typeof this.phnno === 'undefined' || typeof this.password === 'undefined' || typeof this.password2 === 'undefined' ){
+      var datas = {
+        text: 'Please fill all fields',
+        button: 'Close',
+        heading: 'Reason',
+        bigHeading: 'Registration failed :('
+      }
+      this.openDialog(datas);
+    }
+    else if (this.password !== this.password2){
+      var datas = {
+        text: 'Password mismatch',
+        button: 'Close',
+        heading: 'Reason',
+        bigHeading: 'Registration failed :('
+      }
+      this.openDialog(datas);
+    }else if (this.phnno.length !== 10) {
+      var datas = {
+        text: 'Invalid Phone number ',
+        button: 'Close',
+        heading: 'Reason',
+        bigHeading: 'Registration failed :('
+      }
+      this.openDialog(datas);
+    }
+    else if (this.aadhar.length !== 12) {
+      var datas = {
+        text: 'Invalid Aadhar number ',
+        button: 'Close',
+        heading: 'Reason',
+        bigHeading: 'Registration failed :('
+      }
+      this.openDialog(datas);
+    }
+    
+    
+    
+    else{
     this.spinner.show();
     // Add check for pwd and re type pwd
     if ((this.name !== '' && this.name !== undefined) && (this.email !== '' && this.email !== undefined) && (this.password !== '' && this.password !== undefined)) {
@@ -100,8 +139,8 @@ export class RegisterComponent implements OnInit {
       this.spinner.hide();
     }
   }
-
+  }
   ngOnInit() {
   }
-
+  
 }

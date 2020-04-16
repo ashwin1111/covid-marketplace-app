@@ -6,24 +6,25 @@
       <mat-card-title><br>Sign up<br></mat-card-title>
     </mat-card-header>
 
-    <form class="example-form">
+    <form name="myform" class="example-form">
 
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Name" name="name" [(ngModel)]="name" required>
+          <input matInput placeholder="Name" name="name" pattern="[a-zA-Z]" [(ngModel)]="name" required>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" name="email"
             [(ngModel)]="email" required>
+           
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Phone (+91)" name="phnno" [(ngModel)]="phnno" required>
+          <input matInput placeholder="Phone (+91)" type="tel"  pattern="[0-9]{10}" name="phnno" [(ngModel)]="phnno" required>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Aadhar (1234 1234 1234 1234)" name="aadhar" [(ngModel)]="aadhar" required>
+          <input matInput placeholder="Aadhar (1234 1234 1234 1234)" pattern="[0-9]{12}" name="aadhar" [(ngModel)]="aadhar" required>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
