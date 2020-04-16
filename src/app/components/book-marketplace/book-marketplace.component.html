@@ -39,6 +39,11 @@
           </mat-select>
         </mat-form-field>
 
+        <div id="market-address" *ngIf="marketPlacesCollection" class="m-2" style="color: #888888;font-size: small;">
+          <b>Location details:</b><br>
+          Dubai Kuruku santhu<br>Dubai Main road,<br>Pollachi-64663<br>
+        </div>
+
         <mat-form-field *ngIf="marketPlacesCollection" class="example-full-width">
           <mat-label>Select Time Slot</mat-label>
           <mat-select name="select2" [(ngModel)]="select2">
