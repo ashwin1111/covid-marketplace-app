@@ -49,15 +49,16 @@ export class BookMarketplaceComponent implements OnInit {
           } else {
             this.marketPlacesCollection = Object(res).marketPlaces;
             Object(res).marketPlaces.forEach(element => {
-              this.marketPlaces.push({
-                value: element.market_place_id,
-                viewValue: element.market_palce_name
-              });
+              if (element.json_agg !== null) {
+                this.marketPlaces.push({
+                  value: element.market_place_id,
+                  viewValue: element.market_palce_name
+                });
+              }
             });
           }
           this.spinner.hide();
         }).catch(err => {
-          // console.log(err);
           this.spinner.hide();
         });
       });

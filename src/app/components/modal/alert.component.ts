@@ -26,7 +26,6 @@ export class Alert implements OnInit {
     bigHeading: any;
 
     onNoClick(): void {
-        // console.log('texttext', this.data)
         if (this.data.text === 'Thanks for verifying your phone number') {
             this.router.navigate(['/login']);
         } else if (this.data.text === 'Sorry to inform you that your OTP has expired, you can generate a new otp by clicking Re-send otp below') {

@@ -35,7 +35,6 @@ export class LogInComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      // console.log('The dialog was closed');
     });
   }
 
