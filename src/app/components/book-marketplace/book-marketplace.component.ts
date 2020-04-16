@@ -39,10 +39,10 @@ export class BookMarketplaceComponent implements OnInit {
         this.apiService.getApiCall(this.apiService.getBaseUrl() + '/user/MarketPlaces?on_date='+this.dateString).then(res => {
           if (Object(res).msg === 'No Market-Place details found with the active status for that date') {
             var data = {
-              text: 'No Market-Place details for selected date',
+              heading: 'Selected dates are not yet assigned',
               button: 'Close',
-              heading: 'Reason',
-              bigHeading: 'Booking failed :('
+              text: 'Will be updating soon!',
+              bigHeading: 'Market-Place Currently unavailable'
             }
             this.openDialog(data);
           } else {
