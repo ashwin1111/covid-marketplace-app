@@ -26,6 +26,7 @@ export class BookMarketplaceComponent implements OnInit {
       debounceTime(100),
       distinctUntilChanged())
       .subscribe(value => {
+        this.marketPlaces = [];
         var date = new Date(value);
         var month = date.getMonth()+1;
         var monthString;
@@ -65,6 +66,7 @@ export class BookMarketplaceComponent implements OnInit {
         debounceTime(100),
         distinctUntilChanged())
         .subscribe(value => {
+          this.timeslotCollection = [];
           var obj = this.marketPlacesCollection.filter(f => f.market_place_id === value);
           obj = obj[0].json_agg;
           obj.forEach(element => {
@@ -138,6 +140,14 @@ export class BookMarketplaceComponent implements OnInit {
         button: 'Close',
         heading: 'Reason',
         bigHeading: 'Booking failed :('
+      }
+      this.openDialog(data);
+    } else if (Object(res).msg === 'Time slot has Full please choose any other time slot :)') {
+      var data = {
+        text: 'Choose some other time slot',
+        button: 'Close',
+        heading: 'Reason',
+        bigHeading: 'Slot is full :('
       }
       this.openDialog(data);
     } else {
