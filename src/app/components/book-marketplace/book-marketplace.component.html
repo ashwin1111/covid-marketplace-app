@@ -24,8 +24,8 @@
         </mat-form-field>
 
         <label class="example-full-width">
-          Select Date:
-          <input name="invalidMoment" [(ngModel)]="dateSelected"  [owlDateTimeTrigger]="dt3"
+          Booking Date:
+          <input placeholder="Tap here to select date" name="invalidMoment" [(ngModel)]="dateSelected"  [owlDateTimeTrigger]="dt3"
             [owlDateTime]="dt3" #dateTime="ngModel" class="example-full-width" (ngModelChange)="this.dateslotUpdate.next($event)">
           <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
         </label>
@@ -39,9 +39,9 @@
           </mat-select>
         </mat-form-field>
 
-        <div id="market-address" *ngIf="marketPlacesCollection" class="m-2" style="color: #888888;font-size: small;">
+        <div id="market-address" *ngIf="marketPlacesCollection && select" class="m-2" style="color: #888888;font-size: small;">
           <b>Location details:</b><br>
-          Dubai Kuruku santhu<br>Dubai Main road,<br>Pollachi-64663<br>
+          {{address}}
         </div>
 
         <mat-form-field *ngIf="marketPlacesCollection" class="example-full-width">

@@ -67,7 +67,9 @@ export class BookMarketplaceComponent implements OnInit {
         distinctUntilChanged())
         .subscribe(value => {
           this.timeslotCollection = [];
+          this.address = null;
           var obj = this.marketPlacesCollection.filter(f => f.market_place_id === value);
+          this.address = obj[0].market_place_address;
           obj = obj[0].json_agg;
           obj.forEach(element => {
             this.timeslotCollection.push({
@@ -102,6 +104,7 @@ export class BookMarketplaceComponent implements OnInit {
   filename: any;
   code: any;
   displayQr = false;
+  address: any;
 
   openDialog(values): void {
     var data = {
@@ -179,7 +182,8 @@ export class BookMarketplaceComponent implements OnInit {
       time_slot_id: this.select2,
       aadhar: this.aadhar,
       time_slot: time_slot,
-      on_date: this.dateString
+      on_date: this.dateString,
+      name: this.name
     };
 
     this.apiService.apiCall(baseUrl + '/user/book_slot', data).then(res => {
