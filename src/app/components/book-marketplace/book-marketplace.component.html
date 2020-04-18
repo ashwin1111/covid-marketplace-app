@@ -16,7 +16,7 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput name="aadhar" placeholder="Aadhar (1234 1234 1234 1234)" [(ngModel)]="aadhar" readonly>
+          <input matInput name="aadhar" placeholder="Aadhar" [(ngModel)]="aadhar" readonly>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -24,7 +24,7 @@
         </mat-form-field>
 
         <label class="example-full-width">
-          Booking Date:
+          Booking Date
           <input placeholder="Tap here to select date" name="invalidMoment" [(ngModel)]="dateSelected"  [owlDateTimeTrigger]="dt3"
             [owlDateTime]="dt3" #dateTime="ngModel" class="example-full-width" (ngModelChange)="this.dateslotUpdate.next($event)">
           <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>

@@ -48,10 +48,10 @@ export class ResendOtpComponent implements OnInit {
         this.router.navigate(['/otp']);
       } else if (Object(res).msg === 'Limit exceeded') {
         var data = {
-          text: 'OTP Limit exceeded',
+          text: 'OTP limit exceeded',
           button: 'Close',
-          heading: 'Reason',
-          bigHeading: 'Sending OTP failed :('
+          heading: '',
+          bigHeading: 'Contact Helpline'
         }
         this.openDialog(data);
       } else {

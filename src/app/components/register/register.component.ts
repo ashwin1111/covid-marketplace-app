@@ -109,8 +109,8 @@ export class RegisterComponent implements OnInit {
           var data = {
             text: 'Email already exists',
             button: 'Close',
-            heading: 'Reason',
-            bigHeading: 'Registration failed :('
+            heading: '',
+            bigHeading: 'Registration failed'
           }
           this.openDialog(data);
         } else if (Object(res).error && Object(res).error.msg === 'Email badly formatted') {

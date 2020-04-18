@@ -63,7 +63,7 @@ export class OtpComponent implements OnInit {
         var data = {
           text: 'Verification successful',
           button: 'Close',
-          heading: 'Reason',
+          heading: '',
           bigHeading: 'Account Verified'
         }
         this.openDialog(data);
@@ -71,8 +71,8 @@ export class OtpComponent implements OnInit {
         var data = {
           text: 'OTP expired',
           button: 'Close',
-          heading: 'Reason',
-          bigHeading: 'Account Verification failed :('
+          heading: '',
+          bigHeading: 'Account Verification failed'
         }
         this.openDialog(data);
       } else if (Object(res).error.msg === 'Invalid OTP') {

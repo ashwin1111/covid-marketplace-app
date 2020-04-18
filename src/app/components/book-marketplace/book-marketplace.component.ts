@@ -40,10 +40,10 @@ export class BookMarketplaceComponent implements OnInit {
         this.apiService.getApiCall(this.apiService.getBaseUrl() + '/user/MarketPlaces?on_date='+this.dateString).then(res => {
           if (Object(res).msg === 'No Market-Place details found with the active status for that date') {
             var data = {
-              heading: 'Selected dates are not yet assigned',
+              heading: 'No active markets on selected date',
               button: 'Close',
-              text: 'Will be updating soon!',
-              bigHeading: 'Market-Place Currently unavailable'
+              text: 'Try selecting some other date',
+              bigHeading: 'Shop unavailable'
             }
             this.openDialog(data);
           } else {
@@ -140,26 +140,26 @@ export class BookMarketplaceComponent implements OnInit {
       this.displayQr = true;
     } else if (Object(res).msg === 'Sorry you Already booked this slot for today :)') {
       var data = {
-        text: 'Slot Booked already:)',
+        text: 'You have already booked this slot',
         button: 'Close',
-        heading: 'Reason',
-        bigHeading: 'Booking failed :('
+        heading: '',
+        bigHeading: 'Slot Booked already'
       }
       this.openDialog(data);
     } else if (Object(res).msg === 'Time slot has Full please choose any other time slot :)') {
       var data = {
         text: 'Choose some other time slot',
         button: 'Close',
-        heading: 'Reason',
-        bigHeading: 'Slot is full :('
+        heading: '',
+        bigHeading: 'No vacancy in selected time slot'
       }
       this.openDialog(data);
     } else {
       var data = {
-        text: 'Problem while booking :(',
+        text: 'Problem occured while booking',
         button: 'Close',
-        heading: 'Reason',
-        bigHeading: 'Booking failed :('
+        heading: '',
+        bigHeading: 'Booking failed'
       }
       this.openDialog(data);
     }
