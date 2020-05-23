@@ -59,7 +59,7 @@ export class ResendOtpComponent implements OnInit {
           text: `Problem with OTP`,
           button: 'Close',
           heading: 'Reason',
-          bigHeading: 'Sending OTP failed :('
+          bigHeading: 'Sending OTP failed'
         }
         this.openDialog(data);
       }

@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
         text: 'Please fill all fields',
         button: 'Close',
         heading: 'Reason',
-        bigHeading: 'Registration failed :('
+        bigHeading: 'Registration failed'
       }
       this.openDialog(datas);
     }
@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit {
         text: 'Password mismatch',
         button: 'Close',
         heading: 'Reason',
-        bigHeading: 'Registration failed :('
+        bigHeading: 'Registration failed'
       }
       this.openDialog(datas);
     }else if (this.phnno.length !== 10) {
@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
         text: 'Invalid Phone number ',
         button: 'Close',
         heading: 'Reason',
-        bigHeading: 'Registration failed :('
+        bigHeading: 'Registration failed'
       }
       this.openDialog(datas);
     }
@@ -74,7 +74,7 @@ export class RegisterComponent implements OnInit {
         text: 'Invalid Aadhar number ',
         button: 'Close',
         heading: 'Reason',
-        bigHeading: 'Registration failed :('
+        bigHeading: 'Registration failed'
       }
       this.openDialog(datas);
     }
@@ -118,7 +118,7 @@ export class RegisterComponent implements OnInit {
             text: 'Email badly formatted',
             button: 'Close',
             heading: 'Reason',
-            bigHeading: 'Registration failed :('
+            bigHeading: 'Registration failed'
           }
           this.openDialog(data);
         } else {
@@ -126,7 +126,7 @@ export class RegisterComponent implements OnInit {
             text: 'Problem while registering',
             button: 'Close',
             heading: 'Reason',
-            bigHeading: 'Registration failed :('
+            bigHeading: 'Registration failed'
           }
           this.openDialog(data);
         }

@@ -80,7 +80,7 @@ export class OtpComponent implements OnInit {
           text: 'Invalid OTP',
           button: 'Close',
           heading: 'Reason',
-          bigHeading: 'Account Verification failed :('
+          bigHeading: 'Account Verification failed'
         }
         this.openDialog(data);
       } else {
@@ -88,7 +88,7 @@ export class OtpComponent implements OnInit {
           text: `Problem with OTP`,
           button: 'Close',
           heading: 'Reason',
-          bigHeading: 'Account Verification failed :('
+          bigHeading: 'Account Verification failed'
         }
         this.openDialog(data);
       }

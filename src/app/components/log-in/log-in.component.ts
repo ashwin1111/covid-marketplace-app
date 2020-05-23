@@ -58,7 +58,7 @@ export class LogInComponent implements OnInit {
             text: 'OTP verification pending',
             button: 'Close',
             heading: 'Reason',
-            bigHeading: 'Login failed :('
+            bigHeading: 'Login failed'
           }
           this.openDialog(data);
         } else if (Object(res).error.msg === 'No user found with the given creds') {
@@ -66,7 +66,7 @@ export class LogInComponent implements OnInit {
             text: 'User not found',
             button: 'Close',
             heading: 'Reason',
-            bigHeading: 'Login failed :('
+            bigHeading: 'Login failed'
           }
           this.openDialog(data);
         } else if (Object(res).error.msg === 'Invalid creds') {
@@ -74,7 +74,7 @@ export class LogInComponent implements OnInit {
             text: 'Invalid credentials',
             button: 'Close',
             heading: 'Reason',
-            bigHeading: 'Login failed :('
+            bigHeading: 'Login failed'
           }
           this.openDialog(data);
         } else {
@@ -82,7 +82,7 @@ export class LogInComponent implements OnInit {
             text: 'Problem while logging',
             button: 'Close',
             heading: 'Reason',
-            bigHeading: 'Login failed :('
+            bigHeading: 'Login failed'
           }
           this.openDialog(data);
         }
