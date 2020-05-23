@@ -104,7 +104,7 @@ export class RegisterComponent implements OnInit {
         this.aadhar = null;
         this.phnno = null;
         if (Object(res).msg === 'User registered successfully') {
-          this.router.navigate(['/otp']);
+          this.router.navigate(['/login']);
         } else if (Object(res).msg === 'Email already exists') {
           var data = {
             text: 'Email already exists',
