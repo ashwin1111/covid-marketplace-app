@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "dist/covid19-marketplace",
+    "site": "marketplace-app",
     "ignore": [
       "firebase.json",
       "**/.*",
