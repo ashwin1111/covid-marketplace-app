@@ -176,9 +176,6 @@ export class BookMarketplaceComponent implements OnInit {
         f.json_agg.filter(f2 => {
           if (f2.id === this.select2) {
             time_slot = f2.time_slot_range;
-          } else {
-            // do nothing
-
           }
         })
       }
