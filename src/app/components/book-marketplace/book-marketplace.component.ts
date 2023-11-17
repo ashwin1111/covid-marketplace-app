@@ -166,13 +166,19 @@ export class BookMarketplaceComponent implements OnInit {
   }
 
   createUrl() {
-    var baseUrl = this.apiService.getBaseUrl();
-    var time_slot;
+    let baseUrl = this.apiService.getBaseUrl();
+    var time_slot = 'neasasd';
+    time_slot = null;
+
+    
     this.marketPlacesCollection.filter(f => {
       if (f.market_place_id === this.select) {
         f.json_agg.filter(f2 => {
           if (f2.id === this.select2) {
             time_slot = f2.time_slot_range;
+          } else {
+            // do nothing
+
           }
         })
       }
@@ -196,7 +202,7 @@ export class BookMarketplaceComponent implements OnInit {
   submit(): void {
     this.spinner.show();
     // TODO: if all fields are filled
-    if (1) {
+    if (true) {
       this.createUrl();
     } else {
       // please enter all required fields
